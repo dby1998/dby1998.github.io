@@ -1,0 +1,327 @@
+I"K<p>廖雪峰网站详细介绍了Git<a href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
+
+<p>Git:分布式版本控制系统</p>
+
+<p>GitHub网站为开源项目免费提供Git存储</p>
+
+<h1 id="安装git">安装Git</h1>
+
+<p>查看是否安装Git   输入命令git看是否有帮助信息
+在终端输入   <code class="highlighter-rouge">sudo apt-get install git</code>安装Git 
+安装完之后需要输入自己的名字和邮箱
+<code class="highlighter-rouge">git config --global user.name "Your Name"</code>
+<code class="highlighter-rouge">git config --blobal user.email "email@example.com"</code></p>
+
+<h1 id="集中式与分布式版本控制系统">集中式与分布式版本控制系统</h1>
+
+<h2 id="集中式版本控制系统">集中式版本控制系统</h2>
+<p>版本库是集中存放在中央服务器，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。</p>
+
+<p>集中式版本控制系统最大的毛病就是必须联网才能工作如果网速慢的话，读取速度慢</p>
+
+<h2 id="分布式版本控制系统">分布式版本控制系统</h2>
+<p>分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</p>
+
+<p>和集中式版本控制系统相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库</p>
+
+<p>在实际使用分布式版本控制系统的时候，其实很少在两人之间的电脑上推送版本库的修改，因为可能你们俩不在一个局域网内，两台电脑互相访问不了，也可能今天你的同事病了，他的电脑压根没有开机。因此，分布式版本控制系统通常也有一台充当“中央服务器”的电脑，但这个服务器的作用仅仅是用来方便“交换”大家的修改，没有它大家也一样干活，只是交换修改不方便而已。</p>
+
+<h1 id="创建版本库">创建版本库</h1>
+
+<p>版本库：版本库又名仓库，英文名repository，简单的理解为目录，这个目录里面的所有文件都可以被Git管理，每个文件的修改、删除、Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”</p>
+
+<h1 id="git命令">Git命令</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>mkdir  文件名</td>
+      <td>新建文件</td>
+    </tr>
+    <tr>
+      <td>cd</td>
+      <td>进入文件</td>
+    </tr>
+    <tr>
+      <td>pwd</td>
+      <td>显示当前目录</td>
+    </tr>
+    <tr>
+      <td>git init</td>
+      <td>把这个当前目录变成git可以管理的仓库</td>
+    </tr>
+    <tr>
+      <td>git add (文件)</td>
+      <td>把文件添加到仓库</td>
+    </tr>
+    <tr>
+      <td>git commit -m “说明”</td>
+      <td>把文件提交到仓库</td>
+    </tr>
+    <tr>
+      <td>git log [–pretty=oneline]</td>
+      <td>查看历史记录</td>
+    </tr>
+    <tr>
+      <td>git reset –hard HEAD^</td>
+      <td>回到上一个版本(^^回到上上一个版本以此类推)</td>
+    </tr>
+    <tr>
+      <td>git reset –hard (commit ID 号)</td>
+      <td>返回到指定的版本</td>
+    </tr>
+    <tr>
+      <td>git status</td>
+      <td>查看状态</td>
+    </tr>
+    <tr>
+      <td>git checkout <文件名></文件名></td>
+      <td>丢弃工作区的改动</td>
+    </tr>
+    <tr>
+      <td>git reset HEAD <文件名></文件名></td>
+      <td>取消暂存，回到工作区</td>
+    </tr>
+    <tr>
+      <td>git rm <文件名></文件名></td>
+      <td>删除文件</td>
+    </tr>
+    <tr>
+      <td>git commit -m</td>
+      <td>删除提交到分支</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>commit在Git里被称为快照，一旦文件改乱了，或者误删了文件，可以从最近的一个commit恢复，然后继续工作，而不是把文件全部丢失</p>
+
+<h1 id="工作区与暂存区">工作区与暂存区</h1>
+
+<p>新建一个目录，将这个目录变为<code class="highlighter-rouge">git init</code>可以管理的仓库，在这个仓库里新建文件/编辑内容<code class="highlighter-rouge">(vim 文件名)</code>，使用<code class="highlighter-rouge">git add  (文件名)</code>将这个文件添加到暂存区，然后使用 <code class="highlighter-rouge">git commit -m "说明"</code> 将暂存区的所有内容提交到分支
+因为我们创建Git库时，Git自动为我们创建了唯一一个<code class="highlighter-rouge">master</code>分支，所以现在<code class="highlighter-rouge">git commit</code>就是往<code class="highlighter-rouge">master</code>分支上提交修改</p>
+
+<h1 id="远程仓库-github">远程仓库 github</h1>
+<p>在继续阅读后续内容前，请自行注册GitHub账号。由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以，需要一点设置：</p>
+
+<p>第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
+<code class="highlighter-rouge">ssh-keygen -t rsa -C "自己的邮箱地址"</code> 
+一直回车下去，如果一切顺利的话，可以在用户主目录里找到<code class="highlighter-rouge">.ssh</code>目录，里面有<code class="highlighter-rouge">id_rsa</code>和<code class="highlighter-rouge">id_rsa.pub</code>两个文件，这两个就是SSH Key的秘钥对，<code class="highlighter-rouge">id_rsa</code>是私钥，不能泄露出去，<code class="highlighter-rouge">id_rsa.pub</code>是公钥，可以放心地告诉任何人。</p>
+
+<p>第二步: 登录GigHub，打开“Account settings”，“SSH Keys”页面
+然后，点“Add SSH Key”，填上任意Title，在Key文本狂粘贴id_rsa.pub文件内容</p>
+
+<h2 id="添加远程库">添加远程库</h2>
+
+<p>在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，并且让这俩个仓库进行远程同步，这样，GitHub上的仓库既可以作为备份，又可以让其他人通过该仓库写作</p>
+
+<p>首先，登录GitHub，在右上角找到“Create a new repo”按钮，创建一个新的仓库：</p>
+
+<p>在Repository name 填入<code class="highlighter-rouge">learngit</code>,其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：</p>
+
+<p>目前，在GitHub上的这个<code class="highlighter-rouge">learngit</code>仓库还是空的，GitHub可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与子关联，然后，把本地仓库的内容推送到GitHub仓库</p>
+
+<p>在本地的<code class="highlighter-rouge">learngit</code>仓库下运行命令：
+<code class="highlighter-rouge">git remoteaddorigingit@github.com:(GitHub账户名)/learngit.git</code></p>
+
+<p>添加后，远程库的名字就是<code class="highlighter-rouge">origin</code>，这是Git默认的叫法，也可以改成别的，但是<code class="highlighter-rouge">origin</code>这个名字一看就知道是远程库。</p>
+
+<p>下一步，就可以把本地库的所有内容推送到远程库上
+<code class="highlighter-rouge">git push -u origin master</code>
+把本地的内容推送到远程，用<code class="highlighter-rouge">git push</code>命令，实际上是吧当前分支<code class="highlighter-rouge">master</code>推送到远程</p>
+
+<p>由于远程库是空的，我们第一次推送<code class="highlighter-rouge">master</code>分支时，加上<code class="highlighter-rouge">-u</code>参数，Git不但会把本地的<code class="highlighter-rouge">master</code>分支内容推送的远程新的<code class="highlighter-rouge">master</code>分支，还会把本地的<code class="highlighter-rouge">master</code>分支和远程的<code class="highlighter-rouge">master</code>分支关联起来，在以后的推送就可以简化命令使用<code class="highlighter-rouge">git push origin master</code></p>
+
+<p>总结：
+要关联一个远程库，使用命令<code class="highlighter-rouge">git remote add origin git@server-name:path/repo-name.git</code>；
+关联后，使用命令<code class="highlighter-rouge">git push -u origin master</code>第一次推送master分支的所有内容；
+此后，每次本地提交后，只要有必要，就可以使用命令<code class="highlighter-rouge">git push origin master</code>推送最新修改；</p>
+
+<h2 id="远程库克隆">远程库克隆</h2>
+
+<p>登录GitHub，创建一个新的仓库，名字叫<code class="highlighter-rouge">gitskills</code>
+勾选<code class="highlighter-rouge">Initialize this repository with a README</code>这样GitHub会自动为我们创建 一个TEADME.md文件</p>
+
+<p>现在，远程库已经准备好了，下一步是用命令<code class="highlighter-rouge">git clone</code>克隆一个本地库
+<code class="highlighter-rouge">git clone git@github.com:michaelliao/gitskills.git</code></p>
+
+<p>注意:把Git库换成自己的，然后进入<code class="highlighter-rouge">gitskills</code>目录,查看
+<code class="highlighter-rouge">cd gitskills</code>
+<code class="highlighter-rouge">ls</code></p>
+
+<h1 id="分支管理">分支管理</h1>
+
+<p>每次提交，Git都把他们当做一条时间线，这段时间线就是一个分支。只有一条时间线，在Git里，这个分支叫主分区，即<code class="highlighter-rouge">mester</code>分支，<code class="highlighter-rouge">HEAD</code>严格来说不是指向提交，而是指向了<code class="highlighter-rouge">mester</code>分支，<code class="highlighter-rouge">mester</code>指向了提交，所以，<code class="highlighter-rouge">HEAD</code>指向的就是当前分支</p>
+
+<p><code class="highlighter-rouge">master</code>分支是一条线，Git用<code class="highlighter-rouge">master</code>指向最新的提交，再用<code class="highlighter-rouge">HEAD</code>指向<code class="highlighter-rouge">master</code>，就能确定当前的分支，以及当前分支的提交点</p>
+
+<p>当我们创建新的分支，Git新建了一个指针<code class="highlighter-rouge">dev</code>，指向<code class="highlighter-rouge">master</code>相同的提交，再把<code class="highlighter-rouge">HEAD</code>指向<code class="highlighter-rouge">dev</code>
+新建分支<code class="highlighter-rouge">git branch (dev)</code>  <br />
+新建分支及切换分支<code class="highlighter-rouge">git branch -b (分支名)</code></p>
+
+<p>创建好分支后可以切换分支，<code class="highlighter-rouge">HEAD</code>指向新建的分支<code class="highlighter-rouge">dev</code>，比如在<code class="highlighter-rouge">dev</code>新提交一次修改，<code class="highlighter-rouge">dev</code>指针往前一步，而<code class="highlighter-rouge">mester</code>指针不动
+切换分支 <code class="highlighter-rouge">git checkout (分支名)</code></p>
+
+<p>我们在<code class="highlighter-rouge">dev</code>分支上进行的修改，所以在<code class="highlighter-rouge">master</code>分支上看不到，要想在<code class="highlighter-rouge">master</code>上看到修改后的内容，需要合并分支</p>
+
+<p>假如我们在<code class="highlighter-rouge">dev</code>上的工作完成了，就可以把<code class="highlighter-rouge">dev</code>合并到<code class="highlighter-rouge">master</code>上
+合并分支<code class="highlighter-rouge">git merge dev</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>分支命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git branch</td>
+      <td>查看分支</td>
+    </tr>
+    <tr>
+      <td>git branch&lt;name&gt;</td>
+      <td>创建分支</td>
+    </tr>
+    <tr>
+      <td>git checkout &lt;name&gt;</td>
+      <td>切换分支</td>
+    </tr>
+    <tr>
+      <td>git checkout -b &lt;name&gt;</td>
+      <td>创建\切换分支</td>
+    </tr>
+    <tr>
+      <td>git merge &lt;name&gt;</td>
+      <td>合并分支</td>
+    </tr>
+    <tr>
+      <td>git branch -d &lt;name&gt;</td>
+      <td>删除分支</td>
+    </tr>
+    <tr>
+      <td>git log –graph</td>
+      <td>查看分支合并图</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="解决冲突">解决冲突</h2>
+
+<p>当在分支上做出修改后,没有和主分支<code class="highlighter-rouge">master</code>进行合并的前提下,主分支进行了修改,由于俩次分支修改的在同一个位置,合并分支会起冲突,不知道那个分支修改的内容在当前位置,所有需要手动去修改(修改成我们希望的内容),解决冲突后,再提交,合并完成(如果俩次修改的内容不在同一个位置,就不会起冲突,可以正常合并)</p>
+
+<h2 id="分支管理策略">分支管理策略</h2>
+
+<p>分支策略:首先，<code class="highlighter-rouge">master</code>分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；</p>
+
+<p>那在哪干活呢？干活都在<code class="highlighter-rouge">dev</code>分支上，也就是说，<code class="highlighter-rouge">dev</code>分支是不稳定的，到某个时候，比如1.0版本发布时，再把<code class="highlighter-rouge">dev</code>分支合并到<code class="highlighter-rouge">master</code>上，在<code class="highlighter-rouge">master</code>分支发布1.0版本；</p>
+
+<p>你和你的小伙伴们每个人都在<code class="highlighter-rouge">dev</code>分支上干活，每个人都有自己的分支，时不时地往<code class="highlighter-rouge">dev</code>分支上合并就可以了</p>
+
+<p><strong>总结</strong>:合并分支时,使用 <code class="highlighter-rouge">git merge --on-ff -m"说名" &lt;分支&gt; </code>参数就可以用普通模式合并,合并后的历史有分支,能看出来曾经做过合并,而使用<code class="highlighter-rouge">git merge &lt;分支&gt;</code> 合并看不出来曾经做过合并</p>
+
+<h2 id="bug分支">BUG分支</h2>
+
+<p>在<code class="highlighter-rouge">dev</code>分支下正在工作的时候,<code class="highlighter-rouge">master</code>分支有任务需要修复一下,而<code class="highlighter-rouge">dev</code>分支无法中断工作,需要把<code class="highlighter-rouge">dev</code>分支的内容<code class="highlighter-rouge">git add</code>到暂存区,然后隐藏起来<code class="highlighter-rouge">git stash</code>,然后在新建一个分支去修复<code class="highlighter-rouge">master</code>分支的BUG,修复完成后,切换到<code class="highlighter-rouge">master</code>分支,完成合并,删除这个分支,回到<code class="highlighter-rouge">dev</code>分支,把刚才隐藏的工作恢复过来同时把stash内容删除掉<code class="highlighter-rouge">git stash apply</code>恢复,但恢复过来,stash内容并不删除,需要用<code class="highlighter-rouge">git stash drop</code>来删除      <code class="highlighter-rouge">git stash pop</code>恢复同时删除stash内容</p>
+
+<p>在master分支上修复的bug，想要合并到当前dev分支，可以用<code class="highlighter-rouge">git cherry-pick \&lt;commit ID\&gt;</code>命令，把bug提交的修改“复制”到当前分支，避免重复劳动。</p>
+
+<h2 id="feature-分支">Feature 分支</h2>
+
+<p>当一个<code class="highlighter-rouge">dev</code>修改的内容提交到分支,需要将这个分支进行删除(此时没有合并),用普通的-d删除不了,需要`git branch -D dev进行强制删除</p>
+
+<h2 id="多人协作">多人协作</h2>
+<p>此网站详细介绍了多人协作的流程<a href="https://www.cnblogs.com/onelikeone/p/6857910.html">https://www.cnblogs.com/onelikeone/p/6857910.html</a></p>
+
+<p>用于团队开发,当a,b俩用户需要进行开发一个项目,同时把仓库克隆下来,a用户编辑后进行推送<code class="highlighter-rouge">git push master</code> ,此时仓库为最新版本,而b用户往仓库推送会发生冲突(仓库发生了变化,为最新版本,而b用户现在的文件和当时克隆下来的文件不一样,所以会导致冲突),解决冲突(拉取最新版本<code class="highlighter-rouge">git pull</code>)然后再进行推送</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git remote</td>
+      <td>查看远程库的信息</td>
+    </tr>
+    <tr>
+      <td>git remote -v</td>
+      <td>显示更详细的信息</td>
+    </tr>
+    <tr>
+      <td>git push origin</td>
+      <td>推送分支</td>
+    </tr>
+    <tr>
+      <td>git pull</td>
+      <td>抓取最新版本</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="标签">标签</h1>
+
+<p>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。所以，标签也是版本库的一个快照,Git的标签虽然是版本库的快照,但其实它就是指向某个commit的指针</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>标签命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git tag v1 commit ID</td>
+      <td>根据commit ID 打标签</td>
+    </tr>
+    <tr>
+      <td>git tag v2</td>
+      <td>打当前版本标签</td>
+    </tr>
+    <tr>
+      <td>git tag</td>
+      <td>查看所有标签</td>
+    </tr>
+    <tr>
+      <td>git log –pretty=oneline –abbrev-commit</td>
+      <td>查看历史提交的commit id</td>
+    </tr>
+    <tr>
+      <td>git show v1</td>
+      <td>可以看到说明文字</td>
+    </tr>
+    <tr>
+      <td>git tag -d v1</td>
+      <td>删除标签</td>
+    </tr>
+    <tr>
+      <td>git push origin v1</td>
+      <td>推送标签到远程</td>
+    </tr>
+    <tr>
+      <td>git push origin –tags</td>
+      <td>推送所有未推送的标签到远程</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>如果想要删除远程标签,先从本地删除<code class="highlighter-rouge">git tag -d v1</code>,然后再删除远程<code class="highlighter-rouge">git push origin :refs/tags/v1</code></p>
+
+<p>可以同时关联github和gitee库</p>
+
+<p><code class="highlighter-rouge">git remote add</code>把它和码云的远程库关联：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@gitee.com:liaoxuefeng/learngit.git
+</code></pre></div></div>
+
+<p>git add -f  强制添加文件</p>
+:ET
