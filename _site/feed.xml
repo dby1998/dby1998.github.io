@@ -5,13 +5,13 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 Nov 2019 23:41:21 +0800</pubDate>
-    <lastBuildDate>Wed, 20 Nov 2019 23:41:21 +0800</lastBuildDate>
+    <pubDate>Thu, 21 Nov 2019 00:05:38 +0800</pubDate>
+    <lastBuildDate>Thu, 21 Nov 2019 00:05:38 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title></title>
-        <description>&lt;p&gt;廖雪峰网站详细介绍了Git&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/896043488029600&quot;&gt;https://www.liaoxuefeng.com/wiki/896043488029600&lt;/a&gt;&lt;/p&gt;
+        <title>Git个人笔记博客</title>
+        <description>&lt;p&gt;　　廖雪峰网站详细介绍了Git&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/896043488029600&quot;&gt;https://www.liaoxuefeng.com/wiki/896043488029600&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Git:分布式版本控制系统&lt;/p&gt;
 
@@ -336,11 +336,290 @@
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add origin git@gitee.com:liaoxuefeng/learngit.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;git add -f  强制添加文件&lt;/p&gt;
+&lt;p&gt;git add -f  强制添加文件转载请注明原地址，潘柏信的博客：&lt;a href=&quot;http://leopardpan.github.io&quot;&gt;http://leopardpan.github.io&lt;/a&gt; 谢谢！&lt;/p&gt;
 </description>
-        <pubDate>Wed, 20 Nov 2019 23:41:21 +0800</pubDate>
-        <link>http://localhost:4000/2019/11/2019-11-20-Git/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/11/2019-11-20-Git/</guid>
+        <pubDate>Wed, 20 Nov 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/11/Git%E7%AC%94%E8%AE%B0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/Git%E7%AC%94%E8%AE%B0/</guid>
+        
+        <category>博客</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>vim笔记</title>
+        <description>&lt;p&gt;这里将介绍下我们日常开发一些从iOS8过度到iOS9给我们带来的一些变化，及解决方法。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;输入模式命令&lt;/th&gt;
+      &lt;th&gt;作用&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ENTER&lt;/td&gt;
+      &lt;td&gt;回车键，换行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BACK SPACE&lt;/td&gt;
+      &lt;td&gt;退格键，删除光标前一个字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;EL&lt;/td&gt;
+      &lt;td&gt;除除键，删光标后一个字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HOME/END&lt;/td&gt;
+      &lt;td&gt;文本中移动光标&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;age Up/Page Down&lt;/td&gt;
+      &lt;td&gt;上/下翻页&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Insert&lt;/td&gt;
+      &lt;td&gt;换光标为输入/替换模式&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ESC&lt;/td&gt;
+      &lt;td&gt;退出输入模式，切换到命令模式&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;进入输入
+  i,I i(从光标所在处输入) I(在光标前的首字母插入)
+  a,A a(在光标后输入)  A(在光标末尾输入)
+  0,O o(在光标的下一行出入) O(在光标的上一行输入)
+  r,R r(替换一个字符) R(会一直替换，直到按下ESC为止)&lt;/p&gt;
+
+&lt;p&gt;保存/退出
+  w，保存
+  q，退出
+  wq，保存退出
+  q!，不保存退出
+  ZZ，命令模式下保存退出&lt;/p&gt;
+
+&lt;p&gt;撤销命令/恢复撤销命令
+  u 撤销命令
+  ctrl+r 恢复撤销命令&lt;/p&gt;
+
+&lt;p&gt;显示行号/取消行号
+  set nu 显示行号
+  set nu！ 取消行号&lt;/p&gt;
+
+&lt;p&gt;移动光标的方法
+  h 或向左箭头键 光标向左移动一个字符
+  j 或向下箭头键 光标向下移动一个字符
+  k 或向上箭头键 光标向上移动一个字符
+  l 或向右箭头键 光标向右移动一个字符&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;光标移动到非空格符的下一行
+— 光标移动到非空格付的上一行
+n&lt;space&gt; n表示(数字)，20+空格意思是光标会向右移动这一行的20个字符
+0 或功能键[Home] 这是数字0，移动到这一行的最前面字符处(常用)
+$ 或功能键[End] 移动到这一行的最后面字符出(常用)&lt;/space&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;H 光标移动到这个屏幕的最上方那一行的第一个字符
+  M 光标移动到这个屏幕的中央哪一行的第一个字符
+  L 光标移动到这个屏幕的最下方那一行的第一个字符
+  G 光标到这个档案的最后一行(常用)&lt;/p&gt;
+
+&lt;p&gt;搜索/替换
+  /a 向光标之下寻找一个名称为a的字符串
+  ?a 向光标之上寻找一个名称为a的字符串
+  n  这个n是英文键，寻找下一个
+  N  作用和?a 一样 向上查找&lt;/p&gt;
+
+&lt;p&gt;:1,2s(从第一行到第几行)/需要替换的内容/替换成../g
+  :%s(替换第一行到最后一行)/需要替换的内容/替换成../g
+  :%s(替换第一行到最后一行)/需要替换的内容/替换成../gs(做出提示是否替换)&lt;/p&gt;
+
+&lt;p&gt;删除、复制与粘贴
+  x，X 在一行字当中，x为向后删除一个字符(相当于del)，X(相当与BACk删除键)
+  nx n为数字，连续向后删除n个字符
+  dd 删除光标所在的哪一行
+  ndd n为数字。删除光标所在的向下n行
+  yy 复制光标所在一行
+  nyy n为数字，复制光标所在的向下n行
+  p,P p向光标下复制 
+  . 重复上一个动作http://baixin.io/2015/09/iOS9_Note/)&lt;/p&gt;
+</description>
+        <pubDate>Wed, 20 Nov 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/11/iOS9_Note/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/iOS9_Note/</guid>
+        
+        <category>参考</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CocoaPods使用心得</title>
+        <description>&lt;h3 id=&quot;简介&quot;&gt;简介：&lt;/h3&gt;
+&lt;p&gt;　本章介绍什么是 &lt;code class=&quot;highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; ,如何使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; , 以及 &lt;code class=&quot;highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; 的原理,和使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; 时经常出现的一些问题。&lt;/p&gt;
+
+&lt;p&gt;　Cocoapods 是 OS X 和 iOS 下的一个第三方库管理工具。我们能使用CocoaPods添加被称作 “Pods”的依赖库,并轻松管理它们的版本,CocoaPods会帮我们配置好这些三方库的路径及开发环境,极大的提升了开发者的工作效率。&lt;/p&gt;
+
+&lt;h3 id=&quot;安装cocoapods&quot;&gt;安装CocoaPods　&lt;/h3&gt;
+
+&lt;p&gt;　Mac下自带ruby,使用ruby的gem命令安装,ruby的软件源被墙了,把官方的ruby源替换成国内的淘宝源。&lt;/p&gt;
+
+&lt;h3 id=&quot;更换gem源&quot;&gt;更换Gem源&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem sources &lt;span class=&quot;nt&quot;&gt;--remove&lt;/span&gt; https://rubygems.org/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem sources &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; https://ruby.taobao.org/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem sources &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.移除掉原有的源（服务器在国外，速度较慢）。&lt;/li&gt;
+  &lt;li&gt;2.等1有反应之后再敲2命令（替换成淘宝上的ruby镜像https）。&lt;/li&gt;
+  &lt;li&gt;3.验证是否成功。成功如下：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;***&lt;/span&gt; CURRENT SOURCES &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt;
+
+http://ruby.taobao.org/
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;更新gem源&quot;&gt;更新Gem源&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;gem update &lt;span class=&quot;nt&quot;&gt;--system&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装cocoapods-1&quot;&gt;安装cocoapods&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;cocoapods
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pod setup
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;pod setup 在执行时会比较慢，因为Cocoapods 要将它的信息下载到 ~/.cocoapods目录下, 耐心等待…&lt;/p&gt;
+
+&lt;h4 id=&quot;提升cocoapods的安装速度&quot;&gt;提升cocoapods的安装速度&lt;/h4&gt;
+
+&lt;p&gt;所有的项目的 Podspec 文件都托管在https://github.com/CocoaPods/Specs。第一次执行 pod setup 时，CocoaPods 会将这些podspec索引文件更新到本地的 ~/.cocoapods/目录下，这个索引文件比较大，有 80M 左右。
+作者akinliu 在 gitcafe 和 oschina 上建立了 CocoaPods 索引库的镜像(在国内),我们可以使用CocoaPods国内的镜像索引，操作时会快多了,如gitcafe：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+pod repo remove master
+pod repo add master https://gitcafe.com/akuandev/Specs.git
+pod repo update
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;使用cocoapods&quot;&gt;使用cocoapods&lt;/h3&gt;
+
+&lt;p&gt;cocoapods安装完成后，使用 pod search 命令来验证一下&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+pod search AFNetworking
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;终端将会有如下结果：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+-&amp;gt; AFNetworking &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;3.0.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+A delightful iOS and OS X networking framework.
+pod &lt;span class=&quot;s1&quot;&gt;'AFNetworking'&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;'~&amp;gt; 3.0.4'&lt;/span&gt;
+- Homepage: https://github.com/AFNetworking/AFNetworking
+- Source:   https://github.com/AFNetworking/AFNetworking.git
+- Versions: 3.0.4, 3.0.3, 3.0.2, 3.0.1, 3.0.0, 3.0.0-beta.3, 3.0.0-beta.2,
+3.0.0-beta.1, 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0,
+2.4.1, 2.4.0, 2.3.1, 2.3.0, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.0, 2.0.3,
+2.0.2, 2.0.1, 2.0.0, 2.0.0-RC3, 2.0.0-RC2, 2.0.0-RC1, 1.3.4, 1.3.3, 1.3.2,
+1.3.1, 1.3.0, 1.2.1, 1.2.0, 1.1.0, 1.0.1, 1.0, 1.0RC3, 1.0RC2, 1.0RC1,
+0.10.1, 0.10.0, 0.9.2, 0.9.1, 0.9.0, 0.7.0, 0.5.1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;master repo]
+- Subspecs:
+- AFNetworking/Serialization &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;3.0.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+- AFNetworking/Security &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;3.0.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+- AFNetworking/Reachability &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;3.0.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+- AFNetworking/NSURLSession &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;3.0.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+- AFNetworking/UIKit &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;3.0.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+
+-&amp;gt; AFNetworking+AutoRetry &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.0.5&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Auto Retries &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;AFNetworking requests
+pod &lt;span class=&quot;s1&quot;&gt;'AFNetworking+AutoRetry'&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;'~&amp;gt; 0.0.5'&lt;/span&gt;
+- Homepage: https://github.com/shaioz/AFNetworking-AutoRetry
+- Source:   https://github.com/shaioz/AFNetworking-AutoRetry.git
+- Versions: 0.0.5, 0.0.4, 0.0.3, 0.0.2, 0.0.1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;master repo]
+
+.........太多了，省略
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;pod search 是CocoaPods的一个搜索命令,我们可以用来搜索任何托管在CocoaPods上的三方库。&lt;/p&gt;
+
+&lt;p&gt;使用CocoaPods时需要新建一个 Podfile 的文件,cd 到 我的Demo项目里，Demo目录下有三个文件&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+Demo 、  Demo.xcodeproj  、 DemoTests
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;新建 Podfile&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;Podfile
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;vim 编辑 Podfile&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim Podfile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;由于是新建的 Podfile 里面应该是空白的。然后我们在里面添加依赖库，格式如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+platform :ios
+pod &lt;span class=&quot;s1&quot;&gt;'Reachability'&lt;/span&gt;,  &lt;span class=&quot;s1&quot;&gt;'~&amp;gt; 3.0.0'&lt;/span&gt;
+pod &lt;span class=&quot;s1&quot;&gt;'ASIHTTPRequest'&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;‘~&amp;gt; 3.0.0’ 是 Reachability 的版本号, 设定了版本号CocoaPods就会下载对应的版本,ASIHTTPRequest没指定版本号,CocoaPods就会下载最新版本的ASIHTTPRequest。
+退出编辑，执行 pod install 下载三方库。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+pod &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;完成后我Demo项目下的文件多了几个:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Demo 、  Demo.xcodeproj  、 DemoTests （之前的三个）
+
+Demo.xcworkspace 、Podfile 、Podfile.lock 、Pods
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这个时候我们打开Demo项目是点击 Demo.xcworkspace 文件了，到此CocoaPods的基本使用已经讲完了，接下来的CocoaPods的原理，和让我们自己的三方库也支持CocoaPods。&lt;/p&gt;
+
+&lt;p&gt;待续…&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.jobbole.com/53365/&quot;&gt;深入理解 CocoaPods&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;转载请注明：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;http://baixin.io/2016/04/CocoaPod_Use/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 02 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/04/CocoaPod_Use/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/04/CocoaPod_Use/</guid>
+        
+        <category>iOS</category>
         
         
       </item>

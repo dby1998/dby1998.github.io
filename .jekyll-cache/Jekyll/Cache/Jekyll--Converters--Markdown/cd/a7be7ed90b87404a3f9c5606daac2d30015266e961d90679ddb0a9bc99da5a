@@ -1,4 +1,4 @@
-I"K<p>廖雪峰网站详细介绍了Git<a href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
+I"�K<p>　　廖雪峰网站详细介绍了Git<a href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
 
 <p>Git:分布式版本控制系统</p>
 
@@ -323,5 +323,5 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@gitee.com:liaoxuefeng/learngit.git
 </code></pre></div></div>
 
-<p>git add -f  强制添加文件</p>
+<p>git add -f  强制添加文件转载请注明原地址，潘柏信的博客：<a href="http://leopardpan.github.io">http://leopardpan.github.io</a> 谢谢！</p>
 :ET

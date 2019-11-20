@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>文章</title>
-  <meta name="description" content="欢迎来到我的个人站~">
+  <title>vim笔记</title>
+  <meta name="description" content="这里将介绍下我们日常开发一些从iOS8过度到iOS9给我们带来的一些变化，及解决方法。">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="文章">
-  <meta name="twitter:description" content="欢迎来到我的个人站~">
+  <meta name="twitter:title" content="vim笔记">
+  <meta name="twitter:description" content="这里将介绍下我们日常开发一些从iOS8过度到iOS9给我们带来的一些变化，及解决方法。">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="文章">
-  <meta property="og:description" content="欢迎来到我的个人站~">
+  <meta property="og:title" content="vim笔记">
+  <meta property="og:description" content="这里将介绍下我们日常开发一些从iOS8过度到iOS9给我们带来的一些变化，及解决方法。">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/archive/">
+  <link rel="canonical" href="http://localhost:4000/2019/11/iOS9_Note/">
   <link rel="alternate" type="application/rss+xml" title="段宝玥" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -175,104 +175,198 @@
         <div class="content-wrapper__inner">
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
+    <h1 class="post-title">vim笔记</h1>
     <div class="post-meta">
-      <time datetime="" itemprop="datePublished" class="post-meta__date date"></time>
-      <span class="post-meta__tags tags"></span>
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2019-11-20 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2019-11-20</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
     </div>
-    <h1 class="post-title">文章</h1>
   </header>
 
   <section class="post">
-    
+    <p>这里将介绍下我们日常开发一些从iOS8过度到iOS9给我们带来的一些变化，及解决方法。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>输入模式命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ENTER</td>
+      <td>回车键，换行</td>
+    </tr>
+    <tr>
+      <td>BACK SPACE</td>
+      <td>退格键，删除光标前一个字符</td>
+    </tr>
+    <tr>
+      <td>EL</td>
+      <td>除除键，删光标后一个字符</td>
+    </tr>
+    <tr>
+      <td>HOME/END</td>
+      <td>文本中移动光标</td>
+    </tr>
+    <tr>
+      <td>age Up/Page Down</td>
+      <td>上/下翻页</td>
+    </tr>
+    <tr>
+      <td>Insert</td>
+      <td>换光标为输入/替换模式</td>
+    </tr>
+    <tr>
+      <td>ESC</td>
+      <td>退出输入模式，切换到命令模式</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>进入输入
+  i,I i(从光标所在处输入) I(在光标前的首字母插入)
+  a,A a(在光标后输入)  A(在光标末尾输入)
+  0,O o(在光标的下一行出入) O(在光标的上一行输入)
+  r,R r(替换一个字符) R(会一直替换，直到按下ESC为止)</p>
+
+<p>保存/退出
+  w，保存
+  q，退出
+  wq，保存退出
+  q!，不保存退出
+  ZZ，命令模式下保存退出</p>
+
+<p>撤销命令/恢复撤销命令
+  u 撤销命令
+  ctrl+r 恢复撤销命令</p>
+
+<p>显示行号/取消行号
+  set nu 显示行号
+  set nu！ 取消行号</p>
+
+<p>移动光标的方法
+  h 或向左箭头键 光标向左移动一个字符
+  j 或向下箭头键 光标向下移动一个字符
+  k 或向上箭头键 光标向上移动一个字符
+  l 或向右箭头键 光标向右移动一个字符</p>
+
+<ul>
+  <li>光标移动到非空格符的下一行
+— 光标移动到非空格付的上一行
+n<space> n表示(数字)，20+空格意思是光标会向右移动这一行的20个字符
+0 或功能键[Home] 这是数字0，移动到这一行的最前面字符处(常用)
+$ 或功能键[End] 移动到这一行的最后面字符出(常用)</space></li>
+</ul>
+
+<p>H 光标移动到这个屏幕的最上方那一行的第一个字符
+  M 光标移动到这个屏幕的中央哪一行的第一个字符
+  L 光标移动到这个屏幕的最下方那一行的第一个字符
+  G 光标到这个档案的最后一行(常用)</p>
+
+<p>搜索/替换
+  /a 向光标之下寻找一个名称为a的字符串
+  ?a 向光标之上寻找一个名称为a的字符串
+  n  这个n是英文键，寻找下一个
+  N  作用和?a 一样 向上查找</p>
+
+<p>:1,2s(从第一行到第几行)/需要替换的内容/替换成../g
+  :%s(替换第一行到最后一行)/需要替换的内容/替换成../g
+  :%s(替换第一行到最后一行)/需要替换的内容/替换成../gs(做出提示是否替换)</p>
+
+<p>删除、复制与粘贴
+  x，X 在一行字当中，x为向后删除一个字符(相当于del)，X(相当与BACk删除键)
+  nx n为数字，连续向后删除n个字符
+  dd 删除光标所在的哪一行
+  ndd n为数字。删除光标所在的向下n行
+  yy 复制光标所在一行
+  nyy n为数字，复制光标所在的向下n行
+  p,P p向光标下复制 
+  . 重复上一个动作http://baixin.io/2015/09/iOS9_Note/)</p>
 
 
-<div class="page card">
-
-
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-      <div class="hat_title">
-        <h3>2019</h3>
-      </div>
-      <div class="post_list">
-      <ul>
-      
-    
-  
-    <li>
-      <span>
-        2019-11-20
-      </span>
-       &raquo; 
-      <a href="/2019/11/Git%E7%AC%94%E8%AE%B0/">Git个人笔记博客</a>
-    </li>
- 
-    
-          
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li>
-      <span>
-        2019-11-20
-      </span>
-       &raquo; 
-      <a href="/2019/11/iOS9_Note/">vim笔记</a>
-    </li>
- 
-    
-      
-        </ul>
-         </div>         
-         
-        <div class="hat_title">
-         <h3> 2016</h3>
-        </div>
-        <div class="post_list">
-        <ul>
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li>
-      <span>
-        2016-04- 2
-      </span>
-       &raquo; 
-      <a href="/2016/04/CocoaPod_Use/">CocoaPods使用心得</a>
-    </li>
- 
-    
-      </ul>
-      
-    
-  
-
-</div>
-</div>
   </section>
 </article>
+
+<section>
+
+    
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2016/04/CocoaPod_Use/" data-toggle="tooltip" data-placement="top" title="CocoaPods使用心得">上一篇：  <span>CocoaPods使用心得</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2019/11/Git%E7%AC%94%E8%AE%B0/" data-toggle="tooltip" data-placement="top" title="Git个人笔记博客">下一篇：  <span>Git个人笔记博客</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2019/11/iOS9_Note/";
+        this.page.identifier = "/2019/11/iOS9_Note/";
+    };
+    var disqus_shortname = 'leopard';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+
+  
+
+</section>
+
 
             <section class="footer">
     <footer>
