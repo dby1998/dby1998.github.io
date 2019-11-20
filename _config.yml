@@ -3,10 +3,10 @@ title: 段宝玥
 subtitle: 个人站
 description: 欢迎来到我的个人站~
 # 头像里面的标题
-avatarTitle: leopardpan
+avatarTitle: dby1998
 # 头像里面的描述
-avatarDesc: iOS / 机器学习
-url: "http://baixin.io"
+avatarDesc: Git/markdown
+url: "http://dby1998.github.io"
 
 # Comment
 comment:
@@ -16,18 +16,18 @@ comment:
 
 # Social
 social:
-    weibo: 5366874726 
-    github: leopardpan
+    #weibo: 5366874726 
+    github: dby1998
     # zhihu: panpanleopard
     # juejin: xxx
     jianshu: 2ada30d8d0f7
     # twitter: 
-    mail: leopardpan@icloud.com
+    mail: 1729786267@qq.com
 
 
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
-baidu:
+baidu: 
     id: xxxx  
 
 # Google Analytics
