@@ -1,34 +1,102 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="main-post-list hidden">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #box {
+            width: 99.5%;
+            background : url("./love/25.jpg") no-repeat center;
+            border: 1px solid darkgrey;
+            float: left;
+        }
+        button {
+            width: 200px;
+            height: 40px;
+            float: left;
+        }
+        .photo{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border-radius: 50%;
+            background-size: 100%;
+        }
+    </style>
+</head>
+<div id="box"></div>
 
-  <ol class="post-list">
-    {% for post in paginator.posts %}
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h2>
-      <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          {{ post.date | date: "%F"}}</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">{{ post.tags }}</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href={{ post.url }}>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    {% endfor %}
-  </ol>
+<body>
 
-  {% include pagination.html %}
+    <script>
+        var box = document.getElementById('box');
+        var xw = document.documentElement.clientHeight - 10;
+        box.style.height = xw+'px';
+        box.onclick = function() {
+            var dian = document.createElement('div');
+            dian.className = "photo";
+          
+            var a = parseInt(Math.random() * 10);
+            var b = parseInt(Math.random() * 10);
+            var c = parseInt(Math.random() * 10);
+            var p = parseInt(Math.random() * 24);
+            var g = "rgb(" + a +','+ b +','+ c + ")";
 
-</div>
+            dian.style.border = "3px solid "+g;
+            dian.style.backgroundImage = "url(./love/"+p+".jpg)";
+
+            box.appendChild(dian);
+
+
+            var dianLeft = dian.offsetLeft;
+            var dianTop = dian.offsetTop;
+            var boxwidth = box.offsetWidth;
+            var boxheight = box.offsetHeight;
+            var maxleft = boxwidth - dian.offsetWidth;
+            var maxtop = boxheight - dian.offsetHeight;
+
+            var ltar = parseInt(Math.random() * 10 + 1);
+            var ttar = parseInt(Math.random() * 10 + 1);
+            setInterval(function() {
+                if (dianLeft > maxleft) {
+
+                    ltar = -1;
+                } else if (dianLeft == 0) {
+
+                    ltar = 1;
+                }
+                if (dianTop > maxtop) {
+                    ttar = -1;
+                } else if (dianTop == 100) {
+                    ttar = 1;
+                }
+                dianLeft += ltar;
+                dianTop += ttar;
+
+                dian.style.left = dianLeft + "px";
+                dian.style.top = dianTop + "px";
+
+
+            }, 1)
+            var arr = document.getElementsByClassName("photo");
+            if (arr.length > 18){
+                box.removeChild(arr[0]); 
+            }
+        }
+        var i=0;
+        setInterval(function(){
+            i++;
+            box.style.background = "url(./love/"+i+".jpg) no-repeat center";
+            if(i>=25){
+                i=0;
+            }
+        }, 2222);
+    </script>
+</body>
+<html>
